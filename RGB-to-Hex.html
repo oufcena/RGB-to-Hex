@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>RGB to Hex</h1>
+
+<script>
+function hex(r, g, b) {
+  function code(x) {
+    var hex = x.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+  }
+  return `#${code(r)}${code(g)}${code(b)}`;
+}
+alert( hex(28, 135, 201) ); // #1c89c9
+
+/**********************/
+function rgb(hex) {
+  var regex = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(regex[1], 16),
+    g: parseInt(regex[2], 16),
+    b: parseInt(regex[3], 16)
+  } : null;
+}
+alert(rgb('#1c87c9')); // #1c89c9
+</script>
+
+</body>
+</html>
